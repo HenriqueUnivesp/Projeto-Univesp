@@ -1,0 +1,91 @@
+<!--
+
+Esta página de login do usuário munícipe na plataforma para solicitações a prefeitura
+
+Falta trabalhar no css
+
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            width: 300px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #fff;
+        }
+
+        input[type="submit"] {
+            margin-top: 10px;
+        }
+
+        a {
+            margin-top: 10px;
+            text-decoration: none;
+            color: blue;
+        }
+
+        .error {
+            color: red;
+        }
+
+        .titulo {
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 54px;
+            font-weight: bold;
+        }
+
+        /* Adicione o seguinte estilo CSS */
+        .botao-direito {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        /* Adicione o seguinte estilo CSS para o botão */
+        .botao-direito button {
+            font-size: 24px; /* Aumenta o tamanho da fonte */
+            padding: 10px 20px; /* Adiciona padding ao botão */
+        }
+    </style>
+</head>
+<body>
+    <div class="titulo">Guardiões urbanos</div>
+
+    <!-- Adiciona o botão Acesso prefeitura -->
+    <div class="botao-direito">
+        <button onclick="window.location='{% url 'login_prefeitura' %}'" type="button">Acesso prefeitura</button>
+    </div>
+
+    <form method="post">
+        {% csrf_token %}
+        <label for="email">E-mail:</label><br>
+        <input type="email" id="email" name="email" required><br>
+        <label for="password">Senha:</label><br>
+        <input type="password" id="password" name="password" required><br>
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+        <input type="submit" value="Iniciar sessão">
+        <a href="{% url 'register_municipe' %}">Criar uma conta</a>
+        <a href="{% url 'password_reset' %}">Esqueceu sua senha?</a>
+    </form>
+</body>
+</html>

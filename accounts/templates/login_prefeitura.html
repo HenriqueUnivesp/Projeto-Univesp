@@ -1,0 +1,83 @@
+<!--
+
+Esta página de login do usuário da prefeitura para acesso a plataforma de solicitações abertas pelos munícipes
+
+Falta trabalhar no css
+
+-->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            width: 300px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #fff;
+        }
+
+        input[type="submit"], button.voltar {
+            margin-top: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button.voltar {
+            background-color: #e7e7e7;
+            color: black;
+        }
+
+        a {
+            margin-top: 10px;
+            text-decoration: none;
+            color: blue;
+        }
+
+        .error {
+            color: red;
+        }
+
+        .titulo {
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 54px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="titulo">Acesso painel prefeitura</div>
+
+    <form method="post">
+        {% csrf_token %}
+        <label for="username">Nome de usuário:</label><br>
+        <input type="text" id="username" name="username" required><br>
+        <label for="password">Senha:</label><br>
+        <input type="password" id="password" name="password" required><br>
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+        <input type="submit" value="Iniciar sessão">
+        <!-- Botão Voltar adicionado abaixo do botão Iniciar sessão -->
+        <button type="button" class="voltar" onclick="window.history.back();">Voltar</button>
+    </form>
+</body>
+</html>

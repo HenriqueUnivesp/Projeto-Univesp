@@ -1,0 +1,18 @@
+
+
+<form method="post">
+    {% csrf_token %}
+    <label for="register_prefeitura">Nome de usuário:</label><br>
+    <input type="text" id="register_prefeitura" name="register_prefeitura" required><br>
+    <label for="coluna_1234">Senha:</label><br>
+    <input type="password" id="coluna_1234" name="coluna_1234" required><br>
+    {% if error %}
+        <p class="error">{{ error }}</p>
+    {% endif %}
+    <input type="submit" value="Iniciar sessão">
+    <!-- Botão Voltar adicionado abaixo do botão Iniciar sessão -->
+    <button type="button" class="voltar" onclick="window.history.back();">Voltar</button>
+</form>
+
+
+

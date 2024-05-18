@@ -1,0 +1,26 @@
+<!--
+
+Esta pegina serve para registar novos munícipes para acesso a plataforma.
+
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Criar conta</title>
+</head>
+<body>
+    <h2>Criar conta</h2>
+    <form method="post">
+        {% csrf_token %}
+        <label for="email">E-mail:</label><br>
+        <input type="email" id="email" name="email" required><br>
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password" required><br>
+        <input type="submit" value="Register">
+    </form>
+    <a href="{% url 'login_municipe' %}">Já possui uma conta? Acessar</a>
+</body>
+</html>
+
+

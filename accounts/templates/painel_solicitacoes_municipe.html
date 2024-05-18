@@ -1,0 +1,102 @@
+<!--
+
+Estya página serve para os munícipes preencher as solicitações a prefeitura para manutenção, aluguel de espaço público etc...
+
+-->
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="">
+    <meta name="description" content="solicitação_prefeitura_indaiatuba">
+    <meta name="keywords" content="solicitação, prefeitura indaiatuba, manutenção">
+    <title>Guardiões Urbanos | Prefeitura de Indaiatuba</title>
+    <link rel="stylesheet" href="API.css">
+    
+</head>
+
+<body>
+    <div>
+    <h1>Guardiões Urbanos</h1>
+    <h4>Guardiões urbanos, é um serviço de zeladoria da cidade de forma online, onde com a cooperação do cidadão é solicitado manutenção na sua rua ou em seu bairro, de um jeito mais fácil e rápido.</h4>
+    <h4>Preencha os campos abaixo:</h4>
+    </div>
+
+    <div class="dropdown">
+        <button class="dropbtn" onclick="myFunction()">Solicitação</button>
+        <div class="dropdown-content" id="myDropdown">
+            <a href="#" onclick="selectOption(this)">Manutenção</a>
+            <a href="#" onclick="selectOption(this)">Outra opção</a>
+            <a href="#" onclick="selectOption(this)">Mais uma opção</a>
+        </div>
+
+        <div>
+            <form action="processar_upload.php" method="post" enctype="multipart/form-data">
+            <h3>Nome:
+                <br>
+                <textarea name="nome" style="height: 20px; width: 550px;" placeholder="(o nome é opcional)" ></textarea><br><br>
+            Endereço da solicitação:<br>
+                <textarea name="endereço" style="height: 20px; width: 550px;" placeholder="endereço" required ></textarea><br><br>
+            E-mail:<br>
+                <input type="email" name="email" style="height: 20px; width: 300px;" placeholder="Digite seu e-mail" ><br><br>
+           Qual a solicitação:<br>
+            <textarea name="mensagem" style="height: 20px; width: 550px;" placeholder="texto" required ></textarea><br><br>
+            <label for="imagem">Fotos do local</label>
+            <input type="file" id="imagem" name="imagem" accept="image/*" multiple><br><br>
+            
+            </h3>
+        </form>
+        </div>
+
+
+    </div>
+
+    
+    <p id="error-msg" class="error" style="display: none;">Por favor, selecione uma opção e preencha o endereço da solicitação.</p>
+    <button onclick="submitForm()">Enviar</button>
+
+    <script>
+        var selecionarOpção = null;
+
+        function submitForm() {
+            if (selecionarOpção && document.getElementsByName('endereço')[0].value.trim() !== "") {
+                alert("Sua solicitação foi enviada com sucesso");
+                location.reload();
+            } else {
+                var errorMessage = document.getElementById("error-msg");
+                errorMessage.style.display = "block";
+            }
+        }
+
+        function myFunction() {
+            var dropdown = document.getElementById("myDropdown");
+            dropdown.classList.toggle("show");
+        }
+
+        function selectOption(option) {
+            selecionarOpção = option.textContent;
+            document.querySelector('.dropbtn').textContent = selecionarOpção;
+            var dropdown = document.getElementById("myDropdown");
+            dropdown.classList.remove("show");
+        }
+
+        window.onclick = function(event) {
+            if (!event.target.matches('.dropbtn')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show') && !event.target.matches('.dropdown-content')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
