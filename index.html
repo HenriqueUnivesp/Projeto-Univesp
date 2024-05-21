@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="">
+    <meta name="description" content="solicitação_prefeitura_indaiatuba">
+    <meta name="keywords" content="solicitação, prefeitura indaiatuba, manutenção">
+    <title>Guardiões Urbanos | Prefeitura de Indaiautba  </title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/checkout/">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    
+
+    <!-- Bootstrap core CSS -->
+<link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    
+  
+    <link href="form-validation.css" rel="stylesheet">
+  </head>
+  <body class="bg-light">
+    
+<div class="container">
+  <main>
+    <div class="py-5 text-center">
+      <img class="d-block mx-auto mb-4" src="prefeitura.png" alt="prefeitura de indaiatuba" width="480" height="200">
+      
+      <h2>Guardiões Urbanos</h2>
+      <p class="lead">Guardiões urbanos, é um serviço de zeladoria da cidade de forma online, onde com a cooperação do cidadão é solicitado serviços na sua rua ou em seu bairro, de um jeito mais fácil e rápido.
+        Preencha os campos abaixo:
+      </p>
+    </div>
+    <div class="col-md-5">
+      <label for="country" class="form-label">Solicitação</label>
+      <select class="form-select" id="country" required>
+        <option value="">Manutenção</option>
+        <option>Andamento</option>
+        <option>Reclamação</option>
+      </select>
+    </div>
+    <div class="col-md-7 col-lg-8">
+        
+        <form class="needs-validation" novalidate>
+          <div class="row g-3">
+            <div class="col-sm-6">
+              <label for="firstName" class="form-label">Nome</label>
+              <input type="text" class="form-control" id="firstName" placeholder="Nome completo" value="" required>
+              <div class="invalid-feedback">
+              </div>
+            <div class="col-12">
+            </div>
+
+            <div class="col-12">
+              <label for="address" class="form-label">Endereço da Solicitação</label>
+              <input type="text" class="form-control" id="address" placeholder="nome da rua e numero" required>
+              <div class="invalid-feedback">
+              </div>
+            </div>
+           
+            <div class="form-inline">
+              <label for="zip" class="form-label">Escreva a solicitação:</label>
+                 
+                <label for="exampleFormControlTextarea1" class="form-label"></label>
+                <textarea class="form-control" id="caixadetexto" rows="6" style="width: 500px;" placeholder="escreva aqui" required></textarea>
+              </div>
+              <div class="invalid-feedback">
+            </div>
+            </div>
+          </div>
+
+     <br>
+
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="same-address">
+            <label class="form-check-label" for="same-address">Receber andamento do processo</label>
+          </div>
+          <br><br>
+          <div class="input-group mb-3">
+            <input type="file" class="form-control" id="inputGroupFile02">
+            <label class="input-group-text" for="inputGroupFile02">Upload</label>
+          </div>
+          
+ 
+
+        <br>
+        <br>
+
+          <button class="w-100 btn btn-primary btn-lg" type="submit">Enviar</button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+
+      <script src="form-validation.js"></script>
+  </body>
+</html>
